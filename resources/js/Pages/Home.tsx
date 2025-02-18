@@ -6,12 +6,12 @@ export default function Home() {
     return (
         <>
             <Head title="Home" />
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center bg-white dark:bg-black">
                 <div className="my-5">
                     <ModeToggle/>
                 </div>
                 <div
-                    className="z-10 flex min-h-64 items-center justify-center bg-white dark:bg-black">
+                    className="z-10 flex min-h-64 items-center justify-center">
                     <TextReveal text="My portfolio website is launching soon"/>
                 </div>
             </div>
