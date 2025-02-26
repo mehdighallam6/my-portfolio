@@ -2,7 +2,7 @@ import {Home, Inbox, Users} from "lucide-react"
 
 import {
     Sidebar,
-    SidebarContent,
+    SidebarContent, SidebarFooter,
     SidebarGroup,
     SidebarGroupContent,
     SidebarGroupLabel,
@@ -10,6 +10,7 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from "@/Components/ui/sidebar"
+import {NavUser} from "@/Components/nav-user";
 
 // Menu items.
 const items = [
@@ -51,6 +52,9 @@ export function AppSidebar() {
                     </SidebarGroupContent>
                 </SidebarGroup>
             </SidebarContent>
+            <SidebarFooter>
+                <NavUser />
+            </SidebarFooter>
         </Sidebar>
     )
 }

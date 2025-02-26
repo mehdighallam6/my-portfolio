@@ -33,6 +33,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    /* appends attributes */
+    protected $appends = [
+        'avatar',
+    ];
+
     /**
      * Get the attributes that should be cast.
      *
@@ -44,5 +49,11 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    // Default shadcn icon, for now
+    public function getAvatarAttribute()
+    {
+        return 'https://github.com/shadcn.png';
     }
 }
