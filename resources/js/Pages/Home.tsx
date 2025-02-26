@@ -6,7 +6,10 @@ import {ShinyButton} from "@/Components/magicui/shiny-button";
 export default function Home() {
 
     const scrollToBottom = () => {
-        window.scrollBy({ top: 2000, behavior: "smooth" });
+        const footer = document.querySelector(".footer");
+        if (footer) {
+            footer.scrollIntoView({ behavior: "smooth" });
+        }
     };
 
     return (
@@ -22,6 +25,7 @@ export default function Home() {
                     <TextReveal text="My portfolio website is launching soon"/>
                 </div>
             </div>
+            <div className="bg-white dark:bg-black footer"></div>
         </>
     );
 }
