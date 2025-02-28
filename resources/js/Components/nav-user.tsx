@@ -1,12 +1,9 @@
 "use client"
 
 import {
-    BadgeCheck,
-    Bell,
     ChevronsUpDown,
-    CreditCard,
-    LogOut,
-    Sparkles,
+    LogOut, Settings,
+    User,
 } from "lucide-react"
 
 import {
@@ -35,9 +32,17 @@ export function NavUser() {
     const { isMobile } = useSidebar()
     const { auth } = usePage().props
 
+
+    const goToProfile = () => {
+        router.get(route('profile.edit'));
+    };
+
+
     const handleLogout = () => {
         router.post(route('logout'));
     };
+
+
 
     return (
         <SidebarMenu>
@@ -79,24 +84,14 @@ export function NavUser() {
                         </DropdownMenuLabel>
                         <DropdownMenuSeparator />
                         <DropdownMenuGroup>
-                            <DropdownMenuItem>
-                                <Sparkles />
-                                Upgrade to Pro
+                            <DropdownMenuItem  className='cursor-pointer' onClick={goToProfile}>
+                                <User />
+                                Profile
                             </DropdownMenuItem>
-                        </DropdownMenuGroup>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuGroup>
+                            <DropdownMenuSeparator />
                             <DropdownMenuItem>
-                                <BadgeCheck />
-                                Account
-                            </DropdownMenuItem>
-                            <DropdownMenuItem>
-                                <CreditCard />
-                                Billing
-                            </DropdownMenuItem>
-                            <DropdownMenuItem>
-                                <Bell />
-                                Notifications
+                                <Settings />
+                                Settings
                             </DropdownMenuItem>
                         </DropdownMenuGroup>
                         <DropdownMenuSeparator />
