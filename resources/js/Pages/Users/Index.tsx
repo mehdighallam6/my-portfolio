@@ -1,7 +1,7 @@
 import SideBarLayout from '@/Layouts/SideBarLayout';
 import { Head } from '@inertiajs/react';
 
-export default function Dashboard() {
+export default function Index() {
     return (
         <SideBarLayout>
             <Head title="Users" />
