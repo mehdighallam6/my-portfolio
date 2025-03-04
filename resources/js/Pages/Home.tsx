@@ -24,14 +24,14 @@ export default function Home() {
             <Head title="Home" />
             <div className="bg-white dark:bg-black">
                 <div className="flex flex-col items-center mx-auto max-w-7xl">
-                    <div className="w-full flex flex-row-reverse my-5" onClick={goToLogin}>
+                    <div className="w-full flex flex-row-reverse justify-between my-5" onClick={goToLogin}>
                         <Button variant="ghost">
                             Sign in
                             <ChevronRightIcon size={16} aria-hidden="true" />
                         </Button>
-                    </div>
-                    <div className="my-5 flex flex-col items-center gap-3">
                         <ModeToggle/>
+                    </div>
+                    <div className="my-5">
                         <ShinyButton onClick={scrollToBottom}>Scroll</ShinyButton>
                     </div>
                     <div
