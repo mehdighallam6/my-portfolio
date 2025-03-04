@@ -17,12 +17,12 @@ import {NavUser} from "@/Components/nav-user";
 const items = [
     {
         title: "Dashboard",
-        url: "#",
+        url: route("dashboard"),
         icon: Home,
     },
     {
         title: "Users",
-        url: "#",
+        url: route("users.index"),
         icon: Users,
     },
     {
