@@ -24,8 +24,8 @@ export default function Home() {
             <Head title="Home" />
             <div className="bg-white dark:bg-black">
                 <div className="flex flex-col items-center mx-auto max-w-7xl">
-                    <div className="w-full flex flex-row-reverse justify-between my-5" onClick={goToLogin}>
-                        <Button variant="ghost">
+                    <div className="w-full flex flex-row-reverse justify-between my-5">
+                        <Button variant="ghost" onClick={goToLogin}>
                             Sign in
                             <ChevronRightIcon size={16} aria-hidden="true" />
                         </Button>
