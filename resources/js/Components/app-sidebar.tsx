@@ -19,17 +19,17 @@ import {Link} from "@inertiajs/react";
 const items = [
     {
         title: "Dashboard",
-        url: route("dashboard"),
+        url: "dashboard",
         icon: Home,
     },
     {
         title: "Users",
-        url: route("users.index"),
+        url: "users.index",
         icon: Users,
     },
     {
         title: "Posts",
-        url: "#",
+        url: "posts.index",
         icon: Inbox,
     },
 ]
@@ -59,8 +59,8 @@ export function AppSidebar() {
                         <SidebarMenu>
                             {items.map((item) => (
                                 <SidebarMenuItem key={item.title}>
-                                    <SidebarMenuButton asChild>
-                                        <Link href={item.url}>
+                                    <SidebarMenuButton asChild isActive={route().current() === item.url}>
+                                        <Link href={route(item.url)}>
                                             <item.icon />
                                             <span>{item.title}</span>
                                         </Link>
