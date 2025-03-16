@@ -1,4 +1,4 @@
-import {Head, useForm} from '@inertiajs/react';
+import {Head, Link, useForm} from '@inertiajs/react';
 import {FormEventHandler} from 'react';
 import {GalleryVerticalEnd} from 'lucide-react';
 import {Label} from '@/Components/ui/label';
@@ -30,12 +30,12 @@ export default function Login({ status }: { status?: string; canResetPassword: b
             <Head title="Login" />
             <div className="flex flex-col gap-4 p-6 md:p-10">
                 <div className="flex justify-center gap-2 md:justify-between">
-                    <a href="#" className="flex items-center gap-2 font-medium">
+                    <Link href={route('home')} className="flex items-center gap-2 font-medium">
                         <div className="flex h-6 w-6 items-center justify-center rounded-md bg-primary text-primary-foreground">
                             <GalleryVerticalEnd className="size-4" />
                         </div>
                         My Portfolio
-                    </a>
+                    </Link>
                     <ModeToggle />
                 </div>
                 <div className="flex flex-1 items-center justify-center">
