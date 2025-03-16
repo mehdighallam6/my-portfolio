@@ -3,14 +3,15 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 use App\Http\Controllers\HomeController;
+use \App\Http\Controllers\PostController;
 
 Route::get('/', [HomeController::class,'home'])->name('home');
 
 Route::middleware(['auth','verified'])->group(function () {
     Route::get('/dashboard', [HomeController::class,'dashboard'])->name('dashboard');
     Route::resource('users', UserController::class);
+    Route::resource('posts', PostController::class);
 });
 
 Route::middleware('auth')->group(function () {
