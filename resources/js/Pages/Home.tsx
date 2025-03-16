@@ -1,10 +1,9 @@
-import {Head, router} from '@inertiajs/react';
+import {Head, router, usePage} from '@inertiajs/react';
 import {TextReveal} from "@/Components/magicui/text-reveal";
 import {ModeToggle} from "@/Components/mode-toggle";
 import {ShinyButton} from "@/Components/magicui/shiny-button";
 import {Button} from "@/Components/ui/button";
-import {ChevronLeftIcon, ChevronRightIcon} from "lucide-react";
-import {AnimatedSpan, Terminal, TypingAnimation} from "@/Components/magicui/terminal";
+import {ChevronRightIcon} from "lucide-react";
 
 export default function Home() {
 
@@ -19,6 +18,8 @@ export default function Home() {
         router.get(route('login'));
     };
 
+    const { auth } = usePage().props
+
     return (
         <>
             <Head title="Home" />
@@ -26,7 +27,7 @@ export default function Home() {
                 <div className="flex flex-col items-center mx-auto max-w-7xl">
                     <div className="w-full flex flex-row-reverse justify-between my-5">
                         <Button variant="ghost" onClick={goToLogin}>
-                            Sign in
+                            {auth.user ? <span>Dashboard</span> : <span>Login</span>}
                             <ChevronRightIcon size={16} aria-hidden="true" />
                         </Button>
                         <ModeToggle/>
